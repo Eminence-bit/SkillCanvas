@@ -1,0 +1,87 @@
+/* Roadmap Container - Grid Layout for Multiple Items */
+.roadmap-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  /* Roadmap Timeline (Optional Central Line) */
+  .roadmap-timeline {
+    position: relative;
+    margin: 2rem 0;
+  }
+  
+  .roadmap-timeline::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ddd;
+    z-index: -1;
+  }
+  
+  /* Individual Roadmap Item Styling */
+  .roadmap-item {
+    position: relative;
+    background: #fff;
+    border-left: 4px solid #3498db;
+    padding: 1.5rem 1rem 1.5rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover Effects for Enhanced Interactivity */
+  .roadmap-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Indicator Dot for Timeline Positioning */
+  .roadmap-item::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -12px;
+    width: 12px;
+    height: 12px;
+    background: #3498db;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff;
+  }
+  
+  /* Typography for Roadmap Content */
+  .roadmap-item h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  .roadmap-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Adjustments for Smaller Screens */
+  @media (max-width: 768px) {
+    .roadmap-container {
+      grid-template-columns: 1fr;
+    }
+    /* Adjust border and indicator for vertical timeline */
+    .roadmap-item {
+      border-left: none;
+      border-top: 4px solid #3498db;
+      padding: 1.5rem 1rem;
+    }
+    .roadmap-item::before {
+      left: auto;
+      top: -12px;
+      right: 20px;
+    }
+  }
+  
