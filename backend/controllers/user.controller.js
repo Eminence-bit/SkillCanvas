@@ -8,15 +8,16 @@ exports.registerUser = async (req, res) => {
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
+      console.log(existingUser)
       return res.status(400).json({ error: 'User already exists' });
     }
 
     const user = new User({ name, email, password });
     await user.save();
 
-
+console.log(user)
     const token = user.generateAuthToken();
-
+console.log(token)
     res.status(201).json({ message: 'User registered successfully', token });
   } catch (error) {
     res.status(500).json({ error: 'Server error' });

@@ -1,7 +1,7 @@
 const request = require('supertest');
-const app = require('../../app');
-const CareerRoadmap = require('../../models/career.model');
-const { generateAuthToken } = require('../../utils/auth.utils');
+const app = require('../app');
+const CareerRoadmap = require('../models/career.model');
+const { generateAuthToken } = require('../utils/auth.utils');
 
 describe('Career Routes', () => {
   let token;

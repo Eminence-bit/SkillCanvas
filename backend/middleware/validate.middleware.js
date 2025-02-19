@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
 exports.validateRegister = (req, res, next) => {
+   console.log(req.body)
   const schema = Joi.object({
     name: Joi.string().required(),
     email: Joi.string().email().required(),
@@ -9,6 +10,7 @@ exports.validateRegister = (req, res, next) => {
 
   const { error } = schema.validate(req.body);
   if (error) {
+    console.log(error)
     return res.status(400).json({ error: error.details[0].message });
   }
 

@@ -1,7 +1,7 @@
 const request = require('supertest');
-const app = require('../../app');
-const TechUpdate = require('../../models/tech.model');
-const { generateAuthToken } = require('../../utils/auth.utils');
+const app = require('../app');
+const TechUpdate = require('../models/tech.model');
+const { generateAuthToken } = require('../utils/auth.utils');
 
 describe('Tech Routes', () => {
   let token;

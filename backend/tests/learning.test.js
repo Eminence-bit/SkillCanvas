@@ -1,7 +1,7 @@
 const request = require('supertest');
-const app = require('../../app');
-const LearningPath = require('../../models/learning.model');
-const { generateAuthToken } = require('../../utils/auth.utils');
+const app = require('../app');
+const LearningPath = require('../models/learning.model');
+const { generateAuthToken } = require('../utils/auth.utils');
 
 describe('Learning Routes', () => {
   let token;

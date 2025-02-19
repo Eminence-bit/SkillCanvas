@@ -3,6 +3,9 @@
 const http = require('http');
 const app = require('./app'); // Import the Express app from app.js
 const dotenv = require('dotenv');
+const connectDB = require('./config/db.config');
+const { validate } = require('./models/user.model');
+const validateEnv = require('./config/env.config');
 
 // Load environment variables from .env file
 dotenv.config();
@@ -15,6 +18,8 @@ const server = http.createServer(app);
 
 // Start the server and listen on the specified port
 server.listen(PORT, () => {
+  validateEnv
+  connectDB();
   console.log(`Server is running on port ${PORT}`);
 });
 

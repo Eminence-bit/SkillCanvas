@@ -11,6 +11,12 @@ const careerRoutes = require('./routes/career.routes');
 const jobRoutes = require('./routes/job.routes');
 const techRoutes = require('./routes/tech.routes');
 const analyticsRoutes = require('./routes/analytics.routes');
+const validateEnv = require('./config/env.config');
+const { connectDB } = require('./config/db.config');
+
+
+validateEnv
+
 
 
 const app = express();
@@ -19,7 +25,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-// Routes
+
 app.use('/api/v1/users', userRoutes); 
 app.use('/api/v1/learning', learningRoutes); 
 app.use('/api/v1/careers', careerRoutes); 
@@ -27,7 +33,7 @@ app.use('/api/v1/jobs', jobRoutes);
 app.use('/api/v1/tech-updates', techRoutes);
 app.use('/api/v1/analytics', analyticsRoutes); 
 
-// Default route (optional)
+
 app.get('/', (req, res) => {
   res.status(200).json({
     message: 'Welcome to the Personalized Study Guide API!',

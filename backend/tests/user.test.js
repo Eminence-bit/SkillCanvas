@@ -1,7 +1,7 @@
 const request = require('supertest');
-const app = require('../../app');
-const User = require('../../models/user.model');
-const { generateAuthToken } = require('../../utils/auth.utils');
+const app = require('../app');
+const User = require('../models/user.model');
+const { generateAuthToken } = require('../utils/auth.utils');
 
 describe('User Routes', () => {
   let token;
