@@ -1,7 +1,6 @@
 import { fetchData } from './apiService';
 
 export const login = async (email, password) => {
-  // Replace with your actual API endpoint
   const response = await fetchData('/api/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

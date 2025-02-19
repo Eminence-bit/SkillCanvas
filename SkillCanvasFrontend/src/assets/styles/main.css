@@ -1,43 +1,112 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  .navbar, .sidebar {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-  }
-  
-  .navbar ul,
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .navbar ul li,
-  .sidebar ul li {
-    display: inline-block;
-    margin-right: 1rem;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .dashboard-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .dashboard-content {
-    display: flex;
-  }
-  
-  main {
-    flex: 1;
-    padding: 1rem;
-  }
-  
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.navbar, .sidebar {
+  background-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  height:60px;
+  width: 80%;
+  z-index: 1000;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  padding: 2rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.navbar ul,
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.sidebar ul li {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.sidebar ul li a {
+  padding: 0.75rem 1.5rem;
+  display: block;
+  transition: var(--transition);
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 2rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-top: 60px; 
+}
+
+.dashboard-content {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+main {
+  flex: 1;
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}.sidehead {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1.5rem 0;
+  padding-bottom: 1rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.sidehead:hover {
+  color: var(--secondary-color);
+  transition: var(--transition);
+}
